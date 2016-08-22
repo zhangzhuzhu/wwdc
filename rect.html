@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<canvas id="c1" width="550px" height="565px"></canvas>
+<script>
+    var oC = document.getElementById("c1");
+    var oGC = oC.getContext('2d');
+    var x =100;
+    var y =100;
+    var R =40;
+    var r =10;
+    var rotate = 45;
+    var color = "#333";
+    var center = 200;
+    var oR = 100;
+    oGC.translate(center,center);
+
+
+   function rectRadius(x,y,r,R,color,rotate) {
+       var dis = R - r;
+//       var transX= x+center;
+//       var transY=y+center;
+       var transX= x;
+       var transY=y;
+       oGC.save();
+       oGC.fillStyle=color;
+       oGC.translate(transX,transY);
+       oGC.rotate(rotate*Math.PI/180);
+       oGC.translate(-transX,-transY);
+       oGC.beginPath();
+       oGC.moveTo(transX-dis,transY-R);           // 创建开始点
+       oGC.lineTo(transX+dis,transY-R);          // 创建水平线
+       oGC.arc(transX+dis,transY-dis,r,-90*Math.PI/180,0); // 创建弧
+       oGC.lineTo(transX+R,transY+dis);
+       oGC.arc(transX+dis,transY+dis,r,0,90*Math.PI/180); // 创建弧
+       oGC.lineTo(transX-dis,transY+R);
+       oGC.arc(transX-dis,transY+dis,r,90*Math.PI/180,180*Math.PI/180); // 创建弧
+       oGC.lineTo(transX-R,transY-dis);
+       oGC.arc(transX-dis,transY-dis,r,180*Math.PI/180,270*Math.PI/180); // 创建弧
+       oGC.closePath();
+       oGC.fill();
+       oGC.restore();
+
+   }
+
+//    rectRadius(x,y,r,R,color,rotate);
+//    rectRadius(x+100,y+100,r,R,'blue',0);
+//    rectRadius(x+100,y+100,r,R,'yellow',45);
+
+
+    var outLayerPos=[];//最外层位置和颜色，均记录中心位置
+    color =[
+        'rgba(16, 63, 236, 0.75)',
+        'rgba(37, 172, 162, 0.75)',
+        'rgba(233, 124, 32, 0.75)',
+        'rgba(235, 67, 35, 0.75)',
+        'rgba(190, 28, 65, 0.75)',
+        'rgba(208, 57, 159, 0.75)',
+        'rgba(150, 32, 198, 0.75)',
+        'rgba(95, 33, 203, 0.75)'
+    ];
+    for(var i = 0;i<8;i++){
+        var outerObj ={};
+        outerObj.x = oR*Math.cos((3-i)*45*Math.PI/180);
+        outerObj.y = oR*Math.sin((3-i)*45*Math.PI/180);
+        outerObj.fill=color[i];
+        outLayerPos.push(outerObj);
+    }
+
+    console.log(outLayerPos);
+    rectRadius(300,100,r,30,'blue',0);
+    rectRadius(300,100,r,30,'blue',45);
+
+
+
+</script>
+
+</body>
+</html>

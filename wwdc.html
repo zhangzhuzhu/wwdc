@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WWDC邀请函LOGO</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+	<script>
+	setRem ();
+	function setRem (){
+		var iWidth = document.documentElement.clientWidth;
+		iWidth = iWidth>750?750:iWidth;
+		document.getElementsByTagName('html')[0].style.fontSize = iWidth / 16 + 'px';
+	}
+		window.onresize=function(){
+			setRem ();
+		}
+		
+	</script>
+	<link href="./wwdc.css" rel="stylesheet">
+
+	
+
+</head>
+<body>
+
+<div class="wrap">
+	<h2>CSS3实现</h2>
+	<div id="css3">
+		<!-- 最外层的小方形和小圆形 -->
+		<div class="outer-layer outer-move">
+			<div class="outer-layer-circle">
+				<div class="outer-layer-circle-item "></div>
+				<div class="outer-layer-circle-item"></div>
+				<div class="outer-layer-circle-item "></div>
+				<div class="outer-layer-circle-item "></div>
+			</div>
+			<div class="outer-layer-rect">
+				<div class="outer-layer-rect-item "></div>
+				<div class="outer-layer-rect-item "></div>
+				<div class="outer-layer-rect-item "></div>
+				<div class="outer-layer-rect-item "></div>
+			</div>
+		</div>
+		<!-- 中间层 -->
+		<div class="middle-layer middle-move">
+			<div class="middle-layer-item"></div>
+			<div class="middle-layer-item"></div>
+			<div class="middle-layer-item"></div>
+			<div class="middle-layer-item"></div>
+			<div class="middle-layer-item"></div>
+			<div class="middle-layer-item"></div>
+			<div class="middle-layer-item"></div>
+			<div class="middle-layer-item"></div>
+		</div>
+		<!-- 中心 -->
+		<div class="center-layer">
+			<div class="center-layer-rote center-move"></div>
+			<div class="center-layer-text">
+				<div class="logo">
+					<img class="logo-img" src="./logo.gif">
+				</div>
+				<div class="txt">The epicenter of change.</div>
+				<div class="txt-bottom">WWDC15</div>
+			</div>
+			
+		</div>
+	</div>
+	<h2>SVG实现</h2>
+	<div id="svg">
+		<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 420 420">
+			<!--中层的圆-->
+			<g>
+				<g transform="translate(210 210)" >
+					<circle cx="-56.6" cy="56.6"  r="80" style="fill:rgba(16, 63, 236, 0.75);  stroke: transparent;"></circle>
+					<circle cx="0" cy="80" r="80" style="fill:rgba(37, 172, 162, 0.75);; stroke: transparent; "></circle>
+					<circle cx="56.6" cy="56.6" r="80" style="fill:rgba(233, 124, 32, 0.75); stroke: transparent; "></circle>
+					<circle cx="80" cy="0" r="80" style="fill:rgba(235, 67, 35, 0.75);; stroke: transparent; "></circle>
+					<circle cx="56.6" cy="-56.6" r="80" style="fill:rgba(190, 28, 65, 0.75); stroke: transparent; "></circle>
+					<circle cx="0" cy="-80" r="80" style="fill:rgba(208, 57, 159, 0.75); stroke: transparent; "></circle>
+					<circle cx="-56.6" cy="-56.6" r="80" style="fill:rgba(150, 32, 198, 0.75);stroke: transparent; "></circle>
+					<circle cx="-80" cy="0" r="80" style="fill:rgba(95, 33, 203, 0.75); stroke: transparent; "></circle>
+				</g>
+				<animateTransform attributeName="transform" type="rotate" from="0 210 210 " to="360 210 210 " dur="10s" repeatCount="indefinite"></animateTransform>
+			</g>
+			<!-- 中间的文字部分-->
+			<g transform="translate(210 210)" >
+				<g>
+					<rect x="-92" y="-93" width="184" height="184" rx="40" ry="40" style="fill:rgba(30, 7, 66, 0.65);  stroke: transparent;
+				transform: rotate(45deg);transform-origin: 0 0 "></rect>
+					<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"></animateTransform>
+				</g>
+
+				<rect x="-100" y="-100" width="200" height="200" rx="40" ry="40" style="fill:rgba(30, 7, 66, 0.65);  stroke: transparent;"></rect>
+				<image x="-25" y="-80" width="50" height="50" xlink:href="./logo.gif"></image>
+				<text x="0" y="0" font-size="25" style="fill:#fff ; font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif; " text-anchor="middle">The epicenter</text>
+				<text x="0" y="30" font-size="25" style="fill:#fff; font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif; " text-anchor="middle">of change.</text>
+				<text x="0" y="70" font-size="15" style="fill:#fff; font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif; " text-anchor="middle">WWDC15</text>
+			</g>
+
+			<!--最外层的圆和方形-->
+			<g>
+				<g transform="translate(210 210)" >
+					<circle cx="-113.2" cy="-113.2"  r="30" style="fill:rgba(150, 32, 198, 0.75);  stroke: transparent;"></circle>
+					<circle cx="113.2" cy="-113.2" r="30" style="fill:rgba(190, 28, 65, 0.75); stroke: transparent; "></circle>
+					<circle cx="113.2" cy="113.2" r="30" style="fill:rgba(233, 124, 32, 0.75); stroke: transparent; "></circle>
+					<circle cx="-113.2" cy="113.2" r="30" style="fill:rgba(16, 63, 236, 0.75); stroke: transparent; "></circle>
+					<rect x="-190" y="-30" width="60"  height="60" rx="10" transform="rotate(45 ,-160 0)" style="fill:rgba(95, 33, 203, 0.75); stroke: transparent;
+				"></rect>
+					<rect x="-30" y="-190" width="60"  height="60" rx="10" transform="rotate(45 ,0 -160)" style="fill:rgba(208, 57, 159, 0.75); stroke: transparent; "></rect>
+					<rect x="130" y="-30" width="60"  height="60" rx="10" transform="rotate(45 ,160 0)" style="fill:rgba(235, 67, 35, 0.75);stroke: transparent; "></rect>
+					<rect x="-30" y="130" width="60"  height="60" rx="10" transform="rotate(45 ,0 160)" style="fill:rgba(37, 172, 162, 0.75); stroke: transparent; "></rect>
+				</g>
+				<animateTransform attributeName="transform" type="rotate" from="0 210 210 " to="360 210 210 " dur="30s" repeatCount="indefinite"></animateTransform>
+			</g>
+
+		</svg>
+	</div>
+	<h2>Canvas实现</h2>
+	<div id="canvas">
+		<canvas id="jCanvaScript" width="100%" height="100%"></canvas>
+	</div>
+	<script src = ./wwdc.js></script>
+</div>
+</body>
+</html>

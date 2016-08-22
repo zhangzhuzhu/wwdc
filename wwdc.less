@@ -1,0 +1,76 @@
+body{ padding: 0; margin: 0; text-align: center}
+.wrap{ width: 16rem; height: 16rem;text-align: center;display: inline-block;}
+
+//css方法
+.part-in-center{width:420/40rem; height: 420/40rem; display: inline-block;}
+#css3{  .part-in-center;position: relative;}
+//    最外层
+#css3 .outer-layer{ width: 300/40rem;height: 300/40rem; display: inline-block;left: 50%;
+  top:50%;margin-left: -300/2/40rem;margin-top: -300/2/40rem; position: absolute; z-index: 30}
+#css3 .outer-layer-circle,#css3 .outer-layer-rect{ width: 300/40rem;height: 300/40rem;position: absolute; left: 50%;
+  top:50%;margin-left: -150/40rem; margin-top: -150/40rem; z-index: 20}
+#css3 .outer-layer-rect{ transform: rotate(45deg)}
+#css3 .outer-layer-circle-item,#css3 .outer-layer-rect-item{ width:60/40rem; height: 60/40rem;
+  position: absolute;}
+#css3 .outer-layer-circle-item:nth-of-type(1),#css3 .outer-layer-rect-item:nth-of-type(1){left: 0; top:0;}
+#css3 .outer-layer-circle-item:nth-of-type(2),#css3 .outer-layer-rect-item:nth-of-type(2){right: 0; top:0;}
+#css3 .outer-layer-circle-item:nth-of-type(3),#css3 .outer-layer-rect-item:nth-of-type(3){right: 0; bottom:0;}
+#css3 .outer-layer-circle-item:nth-of-type(4),#css3 .outer-layer-rect-item:nth-of-type(4){left: 0; bottom:0; }
+#css3 .outer-layer-circle-item{ border-radius: 50%}
+#css3 .outer-layer-rect-item{border-radius: 0.3rem}
+#css3 .outer-layer-circle-item:nth-of-type(1){background: rgba(150, 32, 198, 0.75);}
+#css3 .outer-layer-circle-item:nth-of-type(2){background: rgba(190, 28, 65, 0.75);}
+#css3 .outer-layer-circle-item:nth-of-type(3){background: rgba(233, 124, 32, 0.75);}
+#css3 .outer-layer-circle-item:nth-of-type(4){background: rgba(16, 63, 236, 0.75);}
+#css3 .outer-layer-rect-item:nth-of-type(1){background: rgba(208, 57, 159, 0.75); }
+#css3 .outer-layer-rect-item:nth-of-type(2){background: rgba(235, 67, 35, 0.75);}
+#css3 .outer-layer-rect-item:nth-of-type(3){background: rgba(37, 172, 162, 0.75);}
+#css3 .outer-layer-rect-item:nth-of-type(4){background: rgba(95, 33, 203, 0.75);}
+
+//    中间层
+#css3 .middle-layer{ width: 326/40rem; height: 326/40rem; left:50%;top:50%;position: absolute;
+  margin-left: -326/2/40rem; margin-top: -326/2/40rem; z-index: 20;}
+#css3 .middle-layer-item{ width:326/2/40rem; height: 326/2/40rem;position: absolute;
+  left:0; top:50%;margin-left: 0;margin-top: -326/4/40rem;  border-radius: 50%;
+  transform-origin: right center;  }
+#css3 .middle-layer-item:nth-of-type(1){transform: rotate(0deg);background: rgba(95, 33, 203, 0.75);}
+#css3 .middle-layer-item:nth-of-type(2){transform: rotate(-360/8*1deg);background: rgba(16, 63, 236, 0.75);}
+#css3 .middle-layer-item:nth-of-type(3){transform: rotate(-360/8*2deg);background:rgba(37, 172, 162, 0.75);}
+#css3 .middle-layer-item:nth-of-type(4){transform: rotate(-360/8*3deg);background: rgba(233, 124, 32, 0.75);}
+#css3 .middle-layer-item:nth-of-type(5){transform: rotate(-360/8*4deg);background:rgba(235, 67, 35, 0.75);}
+#css3 .middle-layer-item:nth-of-type(6){transform: rotate(-360/8*5deg);background: rgba(190, 28, 65, 0.75);}
+#css3 .middle-layer-item:nth-of-type(7){transform: rotate(-360/8*6deg);background:rgba(208, 57, 159, 0.75);}
+#css3 .middle-layer-item:nth-of-type(8){transform: rotate(-360/8*7deg);background:rgba(150, 32, 198, 0.75);}
+
+//center层
+
+#css3 .center-layer{width: 194/40rem; height: 194/40rem; left:50%;top:50%;position: absolute;
+  margin-left: -194/2/40rem; margin-top: -192/2/40rem; z-index: 35}
+#css3 .center-layer-text{ width: 100%; height: 100%; position: absolute; left: 0; top: 0;background: rgba(30, 7, 66, 0.65);
+border-radius: 0.8rem;z-index: 40}
+#css3 .center-layer-rote{ background: rgba(30, 7, 66, 0.65); width: 94%; height: 94%; margin: 3%; border-radius: 0.8rem}
+.logo{ width: 100%; height:1.8rem; text-align: center; line-height: 2.3rem; z-index: 45}
+.logo-img{ width: 0.95rem; height: 0.95*458/421rem}
+.fontSet{font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ color: #fff;}
+.txt{ width: 100%;box-sizing: border-box;  font-size: 0.6rem;line-height: 0.7rem;padding: 0 0.5rem; .fontSet }
+.txt-bottom{.fontSet;font-size: 0.45rem;line-height: 1.5rem}
+
+//运动
+.center-move{ animation:move-key 20s  infinite linear;-webkit-animation:move-key 20s  infinite linear}
+.middle-move{ animation:move-key 10s  infinite linear;-webkit-animation:move-key 10s  infinite linear}
+.outer-move{ animation:move-key 30s  infinite linear;-webkit-animation:move-key 30s  infinite linear}
+
+@keyframes move-key {
+  0%{transform: rotate(0);}
+  100%{transform: rotate(360deg);}
+}
+@-webkit-keyframes move-key {
+  0%{transform: rotate(0);}
+  100%{transform: rotate(360deg);}
+}
+//svg方法
+#svg{.part-in-center; }
+
+//canvas方法
+#canvas{.part-in-center; }
