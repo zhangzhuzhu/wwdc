@@ -20,9 +20,14 @@ window.onload = function(){
     var middleNum=0;
     var centerNum = 0;
     var preRotate = 0.504;
+    var oImg = document.createElement('img');
+    oImg.src = './logo.gif';
+    oImg.onload = function(){
+        init();
+    }
 
     //页面初始化
-    init();
+    
 
     /*var middleCircle =[
         {'fill':'rgba(16, 63, 236, 0.75)',x:mCR*Math.cos(135*Math.PI/180),y:mCR*Math.sin(135*Math.PI/180)},
@@ -56,6 +61,7 @@ window.onload = function(){
         window.addEventListener('resize',function(){
             setCanvasWidth();
             initWidth();
+            reSetPosition();
         });
 
         //初始化中间圆形位置和颜色
@@ -110,6 +116,18 @@ window.onload = function(){
         logoW =(40/420)*width;
         center = 0.5*width;//中心位置
     }
+    function reSetPosition(){
+        for(var i = 0;i<8;i++){
+            outLayerPos[i].x = oR*Math.cos((3-i)*45*Math.PI/180);
+            outLayerPos[i].y = oR*Math.sin((3-i)*45*Math.PI/180);
+
+            middleLayerPos[i].x =mCR*Math.cos((3-i)*45*Math.PI/180);
+            middleLayerPos[i].y =mCR*Math.sin((3-i)*45*Math.PI/180);
+
+
+        }
+
+    }
 
     //中间圆形
 
@@ -154,8 +172,7 @@ window.onload = function(){
     function setCenterRectText(){
         rectRadius(0,0,15,cLW/2,'rgba(30, 7, 66, 0.65)',0);
         // 设置logo图标
-        var oImg = document.createElement('img');
-        oImg.src = './logo.gif';
+       
         oGC.drawImage(oImg,center-logoW/2,center-1.7*logoW,logoW,logoW);
         // 设置文字
         oGC.fillStyle="#fff";
